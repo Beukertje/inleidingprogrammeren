@@ -1,0 +1,195 @@
+/*fonts*/
+
+
+@font-face {
+    font-family: helveticalight;
+    src: url(fonts/HelveticaNeueLight.otf);
+}
+
+@font-face {
+    font-family: helveticaheavy;
+    src: url(fonts/HelveticaNeueBold.otf);
+}
+
+
+/* Algemeen*/
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    font-family: helveticaheavy;
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: #f5f5f5;
+    filter: drop-shadow(5px 5px 5px #0A0A0A);
+    margin: 0;
+}
+
+h2{
+    font-family: helveticaheavy;
+    margin: 0.5em;
+    font-style: italic;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2em;
+    border-top: 0.3em solid #0A0A0A;
+}
+
+article{
+    border: 0.5em solid #0A0A0A;
+    border-radius: 0.2em;
+    filter: drop-shadow(5px 5px 5px #0A0A0A);
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 0em;
+}
+
+li{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    filter: drop-shadow(5px 5px 5px #0A0A0A);
+}
+
+li img{
+    width: 3em;
+    margin: 1em;
+}
+
+li p{
+    width: 12em;
+    text-align: center;
+}
+
+p {
+    font-size: 1.5em;
+    margin: 0.1em 0em 0em 0em;
+}
+
+button{
+    font-family: helveticaheavy;
+    color: white;
+    background-color: #0A0A0A;
+    font-weight: 800;
+    padding: 0.1em 2em;
+}
+
+article > img{
+    width: 600px;
+}
+
+footer{
+    font-family: helveticalight;
+    font-style: italic;
+    color: #fafafa;
+    text-align: end;
+    background-color: #0A0A0A;
+    font-size: 0.7rem;
+    margin-top: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-right: 2em;
+}
+
+
+
+/*classes*/
+
+
+
+.tekst{
+    font-family: helveticalight;
+    border: 0.1em solid #0A0A0A;
+    font-style: italic;
+    background-color: #f5f5f5;
+    padding-bottom: 0.1em;
+}
+
+.dik{
+    font-family: helveticaheavy;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/*id's*/
+
+#random{
+    font-family: helveticaheavy;
+    font-size: 1.5em;
+    font-style: italic;
+    align-items: center;
+    align-self: center;
+    padding: 1em 2em;
+    background-color: red;
+    filter: drop-shadow(5px 5px 5px #0A0A0A);
+}
+
+/* Grid onderdelen*/
+
+
+
+#grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+
+#basis {
+    grid-area: 1 / 1;
+}
+
+
+#dakkleur {
+    grid-area: 1 / 1;
+}
+
+#bumpers {
+    grid-area: 1 / 1;
+}
+
+#spoiler {
+    grid-area: 1 / 1;
+}
+
+#velgen {
+    grid-area: 1 / 1;
+}
+
+#uitlaat {
+    grid-area: 1 / 1;
+}
+
+#rallylights {
+    grid-area: 1 / 1;
+}
+
+#achtergrond {
+    grid-area: 1 / 1;
+}
+
+#bodykleur {
+    grid-area: 1 / 1;
+}
