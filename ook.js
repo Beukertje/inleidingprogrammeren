@@ -151,7 +151,7 @@ let achtergrondNummer = 0
 //Funtie die de rallylichten verandert (boolean)
 function rallyLichtenVeranderen(){
 
-    if (rallyLightsStatus == true){
+    if (rallyLightsStatus){
 
         rallyLights.src = 'images/geenrallylights.png'
         rallyLightsTekstVak.textContent = 'Geen Rallylichten'
@@ -174,7 +174,7 @@ function rallyLichtenVeranderen(){
 //Funtie die de kleur van het dak verandert (boolean)
 function kleurDakVeranderen(){
 
-    if (kleurDakStatus == true){
+    if (kleurDakStatus){
 
         kleurDak.src = 'images/witdak.png'
         kleurDakTekstVak.textContent = 'Wit'
@@ -196,7 +196,7 @@ function kleurDakVeranderen(){
 
 
 //Funtie die de velgen verandert (array)
-function velgenVerder(){
+function velgenVeranderen(stap){
 
     velgenNummer = velgenNummer + 1
 
@@ -204,238 +204,140 @@ function velgenVerder(){
         velgenNummer = 0
     }
 
-    velgenVeranderen()
-
-    wheelgunAudio.play()
-    
-}
-
-function velgenTerug(){
-
-    velgenNummer = velgenNummer - 1
-
-    if(velgenNummer < 0){
+    else if(velgenNummer < 0){
         velgenNummer = velgenNamen.length-1
     }
-
-    velgenVeranderen()
-
-    wheelgunAudio.play()
-    
-}
-
-function velgenVeranderen(){
 
     velg.src = 'images/' + velgenNamen[velgenNummer]
 
     velgenTekstVak.textContent = velgenTekst[velgenNummer]
 
+    wheelgunAudio.play()
+    
 }
 
-//Funtie die de bodykit verandert (array)
-function bodykitVerder(){
 
-    bodyKitNummer = bodyKitNummer + 1
+
+//Funtie die de bodykit verandert (array)
+function bodyKitVeranderen(stap){
+
+    bodyKitNummer = bodyKitNummer + stap
 
     if(bodyKitNummer > bodyKitNamen.length-1){
         bodyKitNummer = 0
     }
 
-    bodyKitVeranderen()
-    
-    cachingAudio.play()
-
-}
-
-function bodykitTerug(){
-
-    bodyKitNummer = bodyKitNummer - 1
-
-    if(bodyKitNummer < 0){
+    else if(bodyKitNummer < 0){
         bodyKitNummer = bodyKitNamen.length-1
     }
-
-    bodyKitVeranderen()
-
-    cachingAudio.play()
-
-}
-
-function bodyKitVeranderen(){
 
     bodyKit.src = 'images/' + bodyKitNamen[bodyKitNummer]
 
     bodyKitTekstVak.textContent = bodyKitTekst[bodyKitNummer]  
 
+    cachingAudio.play()
+
 }
 
 
-//Funtie die de spoiler verandert (array)
-function spoilerVerder(){
 
-    spoilerNummer = spoilerNummer + 1
+//Funtie die de spoiler verandert (array)
+function spoilerVeranderen(stap){
+
+    spoilerNummer = spoilerNummer + stap
 
     if(spoilerNummer > spoilerNamen.length-1){
         spoilerNummer = 0
     }
 
-    spoilerVeranderen()
-
-    krikAudio.play()
-    
-}
-
-function spoilerTerug(){
-
-    spoilerNummer = spoilerNummer - 1
-
-    if(spoilerNummer < 0){
+    else if(spoilerNummer < 0){
         spoilerNummer = spoilerNamen.length-1
     }
-
-    spoilerVeranderen()
-
-    krikAudio.play()
-
-}
-
-function spoilerVeranderen(){
 
     spoiler.src = 'images/' + spoilerNamen[spoilerNummer]
 
     spoilerTekstVak.textContent = spoilerTekst[spoilerNummer]
 
+    krikAudio.play()
+    
 }
 
 
-//Funtie die de kleur verandert (array)
-function kleurVerder(){
 
-    kleurNummer = kleurNummer + 1
+//Funtie die de kleur verandert (array)
+function kleurVeranderen(stap){
+
+    kleurNummer = kleurNummer + stap
 
     if(kleurNummer > kleurNamen.length-1){
         kleurNummer = 0
     }
 
-    kleurVeranderen()
-
-    kleurAudio.play()
-
-}
-
-function kleurTerug(){
-    kleurNummer = kleurNummer - 1
-
-    if(kleurNummer < 0){
+    else if(kleurNummer < 0){
         kleurNummer = kleurNamen.length-1
     }
-
-    kleurVeranderen()
-
-    kleurAudio.play()
-
-}
-
-function kleurVeranderen(){
 
     kleur.src = 'images/' + kleurNamen[kleurNummer]
 
     kleurTekstVak.textContent = kleurTekst[kleurNummer]
 
+    kleurAudio.play()
+
 }
 
 
-//Funtie die de achtergrond verandert (array)
-function achtergrondVerder(){
 
-    achtergrondNummer = achtergrondNummer + 1
+//Funtie die de achtergrond verandert (array)
+function achtergrondVeranderen(stap){
+
+    achtergrondNummer = achtergrondNummer + stap
 
     if(achtergrondNummer > achtergrondNamen.length-1){
         achtergrondNummer = 0
     }
 
-    achtergrondVeranderen()
-
-    backgroundAudio.play()
-
-}
-
-function achtergrondTerug(){
-    achtergrondNummer = achtergrondNummer - 1
-
-    if(achtergrondNummer < 0){
+    else if(achtergrondNummer < 0){
         achtergrondNummer = achtergrondNamen.length-1
     }
-
-    achtergrondVeranderen()
-
-    backgroundAudio.play()
-
-}
-
-function achtergrondVeranderen(){
 
     achtergrond.src = 'images/' + achtergrondNamen[achtergrondNummer]
 
     achtergrondTekstVak.textContent = achtergrondTekst[achtergrondNummer]
 
+    backgroundAudio.play()
+
 }
 
 
 //Funtie die de upgrade en uitlaat verandert (array)
-function upgradeVerder(){
 
-    /*Audio is gemaakt van samples van het spel Create-a-Ride door Erik Wolter, en zijn bewerkt in Adobe Audition*/
+function upgradeVeranderen(stap){
 
-    let audio = new Audio('sfx/' + upgradeAudioNaam[upgradeNummer])
-
-    upgradeNummer = upgradeNummer + 1
-
-    if(upgradeNummer > upgradeNamen.length-1){
-        upgradeNummer = 0
-    }
-
-    upgradeVeranderen()
-
-   /*Audio is gemaakt met een combinatie van code van Anne van Mill, 
-   in combinatie met een aanpassing van ChatGPT om hem in mijn code te laten werken
-   De gebruikte prompt:
-   "Ik wil meerdere audiobestanden selecteren als ik door een array van namen van de mp3 bestanden scroll, hoe zou ik dan de code moeten neerzetten?"*/
-
-    audio.play()
-
-}
-
-function upgradeTerug(){
-
-    /*Audio is gemaakt van samples van het spel Create-a-Ride door Erik Wolter, en zijn bewerkt in Adobe Audition*/
-    
-    let audio = new Audio('sfx/' + upgradeAudioNaam[upgradeNummer])
-
-    upgradeNummer = upgradeNummer - 1
+    upgradeNummer = upgradeNummer + stap
 
     if(upgradeNummer < 0){
         upgradeNummer = upgradeNamen.length-1
     }
-
-    upgradeVeranderen()
+    else if(upgradeNummer > upgradeNamen.length-1){
+        upgradeNummer = 0
+    }
 
    /*Audio is gemaakt met een combinatie van code van Anne van Mill, 
    in combinatie met een aanpassing van ChatGPT om hem in mijn code te laten werken
    De gebruikte prompt:
    "Ik wil meerdere audiobestanden selecteren als ik door een array van namen van de mp3 bestanden scroll, hoe zou ik dan de code moeten neerzetten?"*/
    
-    audio.play()
-
-}
-
-function upgradeVeranderen(){
-
+    /*Audio is gemaakt van samples van het spel Create-a-Ride door Erik Wolter, en zijn bewerkt in Adobe Audition*/
     upgrade.src = 'images/' + upgradeNamen[upgradeNummer]
 
     upgradeTekstVak.textContent = upgradeTekst[upgradeNummer]
 
+    let audio = new Audio('sfx/' + upgradeAudioNaam[upgradeNummer])
+
+    audio.play()
+
 }
+
 
 
 //Functie om een random mini te genereren
@@ -483,27 +385,26 @@ kleurDakButtonVerder.addEventListener('click', kleurDakVeranderen)
 kleurDakButtonTerug.addEventListener('click', kleurDakVeranderen)
 
 
-velgenButtonVerder.addEventListener('click', velgenVerder)
-velgenButtonTerug.addEventListener('click', velgenTerug)
+velgenButtonVerder.addEventListener('click', () => {velgenVeranderen(1)})
+velgenButtonTerug.addEventListener('click', () => {velgenVeranderen(-1)})
 
 
-bodykitButtonVerder.addEventListener('click', bodykitVerder)
-bodykitButtonTerug.addEventListener('click', bodykitTerug)
+bodykitButtonVerder.addEventListener('click', () => {bodyKitVeranderen(1)})
+bodykitButtonTerug.addEventListener('click', () => {bodyKitVeranderen(-1)})
+
+spoilerButtonVerder.addEventListener('click', () => {spoilerVeranderen(1)})
+spoilerButtonTerug.addEventListener('click', () => {spoilerVeranderen(-1)})
 
 
-spoilerButtonVerder.addEventListener('click', spoilerVerder)
-spoilerButtonTerug.addEventListener('click', spoilerTerug)
+kleurButtonVerder.addEventListener('click', () => {kleurVeranderen(1)})
+kleurButtonTerug.addEventListener('click', () => {kleurVeranderen(-1)})
 
 
-kleurButtonVerder.addEventListener('click', kleurVerder)
-kleurButtonTerug.addEventListener('click', kleurTerug)
+upgradeButtonVerder.addEventListener('click', () => {upgradeVeranderen(1)})
+upgradeButtonTerug.addEventListener('click', () => {upgradeVeranderen(-1)})
 
 
-upgradeButtonVerder.addEventListener('click', upgradeVerder)
-upgradeButtonTerug.addEventListener('click', upgradeTerug)
-
-
-achtergrondButtonVerder.addEventListener('click', achtergrondVerder)
-achtergrondButtonTerug.addEventListener('click', achtergrondTerug)
+achtergrondButtonVerder.addEventListener('click', () => {achtergrondVeranderen(1)})
+achtergrondButtonTerug.addEventListener('click', () => {achtergrondVeranderen(-1)})
 
 randomButton.addEventListener('click', randomMini)
